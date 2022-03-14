@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "cucumberFramework" parallel="tests" thread-count="2">
+	<parameter name="browser" value="chrome"/>
+	<parameter name="testtype" value="Regression"/>
+	<parameter name="suitename" value="charan"/>
+	<parameter name="environment" value="Env1, Env2, Env3"/>
+	<parameter name="application" value="Test Application"/>
+   <test name = "cucumberFramework">
+      <classes>
+         <class name = "com.selenium.runnerClass.TestNGRunner" />
+      </classes>
+   </test>
+</suite>
