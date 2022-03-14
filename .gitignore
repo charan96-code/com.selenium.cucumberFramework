@@ -1,1 +1,8 @@
 /target/
+/test-output/
+/.settings/
+/drivers/
+/Reports/
+/Screenshots/
+/.classpath
+/.project
