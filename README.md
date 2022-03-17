@@ -1,1 +1,3 @@
-I have done only the Initial Commit. The dependency project (webelementAPI) is still under development. Will update them before this weekend.
+Detailed way to use the Framework will be updated by this weekend (March 20, 2022).
+
+Documentation is in Progress.

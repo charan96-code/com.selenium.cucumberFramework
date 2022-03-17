@@ -10,14 +10,14 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.selenium.reports.CucumberReport;
-import com.selenium.utils.ExcelUtils;
-import com.selenium.implimentation.WebElementFactory;
-import com.selenium.webServices.BaseHandler;
-import com.selenium.webServices.SimpleWebElementHandler;
 import com.selenium.generalFunctionalities.Constants;
+import com.selenium.generalFunctionalities.ExcelUtils;
 import com.selenium.generalFunctionalities.GlobalProperties;
 import com.selenium.generalFunctionalities.PropertiesRepository;
+import com.selenium.implimentation.WebElementFactory;
+import com.selenium.reports.CucumberReport;
+import com.selenium.webServices.BaseHandler;
+import com.selenium.webServices.SimpleWebElementHandler;
 
 import cucumber.api.CucumberOptions;
 
