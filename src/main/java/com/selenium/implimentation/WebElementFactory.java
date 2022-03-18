@@ -25,8 +25,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.selenium.generalFunctionalities.Constants;
-import com.selenium.generalFunctionalities.GlobalProperties;
-import com.selenium.generalFunctionalities.PropertiesRepository;
+import com.selenium.config.GlobalProperties;
+import com.selenium.config.PropertiesRepository;
 import com.selenium.reports.CucumberReport;
 import com.selenium.webServices.ActionElementHandler;
 import com.selenium.webServices.BaseHandler;
@@ -86,7 +86,6 @@ public class WebElementFactory{
 
 	public Map<String ,BaseHandler> getWebElementObj (){
 		webElemntFactory = new HashMap<String ,BaseHandler>();
-
 		webElemntFactory.put("baseHandler", new BaseHandler(webDriver));
 		webElemntFactory.put("simpleWebElementHandler", new SimpleWebElementHandler(webDriver));
 		webElemntFactory.put("actionElementHandler", new ActionElementHandler(webDriver));

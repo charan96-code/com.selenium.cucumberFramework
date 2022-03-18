@@ -1,5 +1,7 @@
 package com.selenium.generalFunctionalities;
 
+import com.selenium.config.PropertiesRepository;
+
 public class Constants {
 
 	public static String featureName;

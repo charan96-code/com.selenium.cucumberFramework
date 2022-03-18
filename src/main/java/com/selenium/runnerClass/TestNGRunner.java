@@ -12,8 +12,8 @@ import org.testng.annotations.Parameters;
 
 import com.selenium.generalFunctionalities.Constants;
 import com.selenium.generalFunctionalities.ExcelUtils;
-import com.selenium.generalFunctionalities.GlobalProperties;
-import com.selenium.generalFunctionalities.PropertiesRepository;
+import com.selenium.config.GlobalProperties;
+import com.selenium.config.PropertiesRepository;
 import com.selenium.implimentation.WebElementFactory;
 import com.selenium.reports.CucumberReport;
 import com.selenium.webServices.BaseHandler;
