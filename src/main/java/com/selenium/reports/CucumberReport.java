@@ -27,6 +27,9 @@ public class CucumberReport extends BaseHandler{
 		
 	}
 
+	/***
+	 * Method to generate Cucumber Report
+	 */
 	public void generateCucumberReport() {
 
 		String filePath = System.getProperty("user.dir") + PropertiesRepository.loadAllProperties().getProperty("jsonfile.path");
@@ -56,8 +59,6 @@ public class CucumberReport extends BaseHandler{
 		Configuration configuration = new Configuration(reportOutputDirectory, projectName);
 
 		// optional configuration
-		//configuration.setParallelTesting(parallelTesting);
-		//configuration.setRunWithJenkins(runWithJenkins);
 		configuration.setBuildNumber(buildNumber);
 
 		// Additional meta data presented on main page

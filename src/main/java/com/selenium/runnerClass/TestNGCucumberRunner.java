@@ -22,7 +22,6 @@ import cucumber.runtime.io.MultiLoader;
 import cucumber.runtime.io.ResourceLoader;
 import cucumber.runtime.io.ResourceLoaderClassFinder;
 import cucumber.runtime.model.CucumberFeature;
-import cucumber.runtime.model.CucumberTagStatement;
 import gherkin.formatter.Formatter;
 
 
@@ -45,19 +44,6 @@ public class TestNGCucumberRunner {
 		ClassFinder classFinder = new ResourceLoaderClassFinder(resourceLoader, classLoader);
 		resultListener = new FeatureResultListener(runtimeOptions.reporter(classLoader), runtimeOptions.isStrict());
 		runtime = new Runtime(resourceLoader, classFinder, classLoader, runtimeOptions);
-	}
-
-	/**
-	 * Run the Cucumber features
-	 */
-	public void runCukes() {
-		for (CucumberFeature cucumberFeature : getFeatures()) {
-			cucumberFeature.run(runtimeOptions.formatter(classLoader),resultListener,runtime);
-		}
-		finish();
-		if (!resultListener.isPassed()) {
-			throw new CucumberException(resultListener.getFirstError());
-		}
 	}
 
 	public void runCucumber(CucumberFeature cucumberFeature) {
@@ -136,37 +122,6 @@ public class TestNGCucumberRunner {
 			return featuresList.toArray(new Object[][]{});
 		} catch (CucumberException e){
 			return new Object[][] {new Object[] {new CucumberExceptionWrapper(e)}};
-		}
-	}
-
-	public Object[][] provideFeatures1() {
-		try {
-			List<CucumberFeature> features = getFeatures();
-			List<Object[]> featuresList = new ArrayList<Object[]>(features.size());
-
-			for(CucumberFeature feature: features) {
-
-				featuresList.add(new Object[] {new CucumberFeatureWrapperImpl(feature)});
-			}
-			return featuresList.toArray(new Object[][]{});
-		} catch (CucumberException e){
-			return new Object[][] {new Object[] {new CucumberExceptionWrapper(e)}};
-		}
-	}
-
-	public Object[][] provideScenarios() {
-		try {
-			List<CucumberFeature> features = getFeatures();
-			List<Object[]> scenarioList = new ArrayList<Object[]>(features.size());
-			for (CucumberFeature feature : features) {
-				List<CucumberTagStatement> scenarios = feature.getFeatureElements();
-				for (CucumberTagStatement scenario : scenarios) {
-					scenarioList.add(new Object[]{scenario, scenario.getGherkinModel().getName()});
-				}
-			}
-			return scenarioList.toArray(new Object[][]{});
-		} catch (CucumberException e) {
-			return new Object[][]{new Object[]{new CucumberExceptionWrapper(e)}};
 		}
 	}
 }

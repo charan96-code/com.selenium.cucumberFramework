@@ -16,6 +16,7 @@ import org.testng.Assert;
 
 import com.selenium.webServices.ActionElementHandler;
 import com.selenium.webServices.BaseHandler;
+import com.selenium.webServices.JavaScriptElementHandler;
 
 public class Implimentation {
 
@@ -50,14 +51,25 @@ public class Implimentation {
 		webDriverWait = new WebDriverWait(webDriver,60);
 	}
 
+	/***
+	 * Method to scroll down the page
+	 * 
+	 * @param webDriver
+	 */
 	public void scrollDownThePage(WebDriver webDriver) throws InterruptedException {
-
 		try {
 			Thread.sleep(5000);
 			WebElementFactory.globalscenario.embed(WebElementFactory.attachScreenshot(), WebElementFactory.imageType);
 			PageFactory.initElements(webDriver, this);
 			webElementMap = webElementFactory.getWebElementObj();
 			ActionElementHandler actionElementHandler = (ActionElementHandler) webElementMap.get("actionElementHandler");
+			
+			JavaScriptElementHandler javaScriptElementHandler = (JavaScriptElementHandler) webElementMap.get("javaScriptElementHandler");
+			
+			javaScriptElementHandler.highlightElement(a);
+			
+			WebElementFactory.globalscenario.embed(WebElementFactory.attachScreenshot(), WebElementFactory.imageType);
+			
 			actionElementHandler.moveToElementAndClick(a);
 
 			WebElementFactory.globalscenario.embed(WebElementFactory.attachScreenshot(), WebElementFactory.imageType);
@@ -69,6 +81,11 @@ public class Implimentation {
 		}
 	}
 
+	/***
+	 * Method to explicitly wait for the web element to be visible in the web driver
+	 * 
+	 * @param webElement
+	 */
 	public void explicitWait(WebElement webElement) {
 		LOG.info("webDriverWait is: "+webDriverWait);
 		LOG.info("webElement is: "+webElement);

@@ -5,6 +5,7 @@ public final class GlobalProperties {
 	private GlobalProperties() {
 
 	}
+	
 	public static final String PROPERTIESEXCEPTION = "Properties Exception : There was an error processing properties";
 	public static final String SCREENSHOTPATH = System.getProperty("user.dir")
 			+ PropertiesRepository.loadAllProperties().getProperty("screenshot.path");

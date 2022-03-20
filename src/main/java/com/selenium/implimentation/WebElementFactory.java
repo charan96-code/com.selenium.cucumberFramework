@@ -24,9 +24,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.selenium.generalFunctionalities.Constants;
 import com.selenium.config.GlobalProperties;
 import com.selenium.config.PropertiesRepository;
+import com.selenium.generalFunctionalities.Constants;
 import com.selenium.reports.CucumberReport;
 import com.selenium.webServices.ActionElementHandler;
 import com.selenium.webServices.BaseHandler;
@@ -55,7 +55,7 @@ public class WebElementFactory{
 	Map<String ,BaseHandler> webElemntFactory;
 
 	@Before
-	public void setUp(Scenario scenario) {	
+	public void setUp(Scenario scenario) {
 
 		if(Constants.scenarioCount==1) {
 			Constants.scenarioCount++;
@@ -131,7 +131,7 @@ public class WebElementFactory{
 
 				webDriver = new InternetExplorerDriver();
 				break;
-				
+
 			case GlobalProperties.CHROME:
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
 						+ PropertiesRepository.loadAllProperties().getProperty("global.browser.chrome.driver.executable"));
@@ -157,6 +157,9 @@ public class WebElementFactory{
 				TimeUnit.SECONDS);
 	}
 
+	/***
+	 * Method to launch the application
+	 */
 	public void launchApplication() throws InterruptedException {
 		LOG.info("Launching Application");
 		webDriver.get(PropertiesRepository.loadAllProperties().getProperty("test.test.application.url"));
@@ -181,9 +184,5 @@ public class WebElementFactory{
 		File temp = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(temp, new File(GlobalProperties.SCREENSHOTPATH + File.separator + picture));
 		return temp;
-	}
-
-	public void explicitWait(WebElement webElement) {
-		webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
 	}
 }

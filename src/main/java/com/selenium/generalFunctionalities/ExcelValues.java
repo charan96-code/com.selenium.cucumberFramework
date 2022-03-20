@@ -15,26 +15,50 @@ public class ExcelValues {
 		this.executeStatus = executeStatus;
 	}
 
+	/***
+	 * Method to get Test Case Name
+	 */
 	public String getTestCaseName() {
 		return testCaseName;
 	}
 
+	/***
+	 * Method to set Test Case Name
+	 * 
+	 * @param testCaseName
+	 */
 	public void setTestCaseName(String testCaseName) {
 		this.testCaseName = testCaseName;
 	}
 	
+	/***
+	 * Method to get Description
+	 */
 	public String getDescription() {
 		return testCaseName;
 	}
 
+	/***
+	 * Method to set Description
+	 * 
+	 * @param description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
+	/***
+	 * Method to get Execute status
+	 */
 	public String getExecuteStatus() {
 		return executeStatus;
 	}
 
+	/***
+	 * Method to set Execute status
+	 * 
+	 * @param executeStatus
+	 */
 	public void setExecuteStatus(String executeStatus) {
 		this.executeStatus = executeStatus;
 	}

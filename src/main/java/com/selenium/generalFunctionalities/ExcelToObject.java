@@ -13,6 +13,10 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelToObject {
+
+	/***
+	 * Method to read MetaData Excel File
+	 */
 	public static List<ExcelValues> readXlFile() {
 		List<ExcelValues> excelLst = new ArrayList<ExcelValues>();
 		try {
@@ -37,7 +41,7 @@ public class ExcelToObject {
 								excelValues.setTestCaseName(new BigDecimal(o.toString()).toPlainString());
 							}						
 						}
-						
+
 						else if (colunmCnt == 1) {
 							if(cell.getCellType().equals(CellType.STRING)) {
 								excelValues.setDescription(cell.getStringCellValue());
@@ -57,7 +61,7 @@ public class ExcelToObject {
 								excelValues.setExecuteStatus(new BigDecimal(o.toString()).toPlainString());
 							}
 						}
-						
+
 					}
 					excelLst.add(excelValues);
 				}
