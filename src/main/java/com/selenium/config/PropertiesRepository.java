@@ -7,7 +7,7 @@ import java.util.Properties;
 
 import org.testng.Assert;
 
-import com.selenium.implimentation.WebElementFactory;
+import com.selenium.implementation.WebElementFactory;
 
 public final class PropertiesRepository {
 

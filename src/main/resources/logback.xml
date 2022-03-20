@@ -23,7 +23,7 @@
 	</root>
 
 	
-	<logger name="com.selenium.implimentation" level="warn" additivity="false">
+	<logger name="com.selenium.implementation" level="warn" additivity="false">
 		<appender-ref ref="stdout" />
 	</logger>
 	
@@ -31,7 +31,7 @@
 		<appender-ref ref="stdout" />
 	</logger>
 	
-	<logger name="com.selenium.implimentation" level="debug" additivity="false">
+	<logger name="com.selenium.implementation" level="debug" additivity="false">
 		<appender-ref ref="fout" />
 	</logger>
 	
